@@ -7,13 +7,17 @@ namespace Geometry.Figures
 {
     public class Triangle : Figure
     {
-        public Triangle(float a, float b, float c) : base(new float[] { a, b, c }) { } 
+        public Triangle(float a, float b, float c) : base(new float[] { a, b, c }) { }
 
-        public bool IsRight { get {
+        public bool IsRight
+        {
+            get
+            {
                 float[] sides = Lengths;
                 Array.Sort(sides);
                 return MathF.Pow(sides[2], 2) == MathF.Pow(sides[0], 2) + MathF.Pow(sides[1], 2);
-            } }
+            }
+        }
 
         public override float GetArea()
         {
